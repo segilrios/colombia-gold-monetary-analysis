@@ -51,6 +51,13 @@ tests/          Pruebas de funciones criticas.
 
 Existe una relacion estadistica, predictiva o causal entre el precio del oro y las politicas monetarias de Colombia cuando se observan diferentes ventanas ejecutivas?
 
+## Documentacion inicial
+
+- `docs/state_of_art.md`: estado del arte minimo.
+- `docs/data_catalog.md`: inventario de la base cruda local.
+- `docs/methodology_roadmap.md`: ruta metodologica inicial.
+- `docs/literature/`: PDFs primarios y referencias abiertas descargadas.
+
 ## Estado
 
-Estructura inicial del proyecto.
+Estructura inicial del proyecto, documentacion minima y literatura base.
