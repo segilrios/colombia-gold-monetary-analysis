@@ -1,0 +1,14 @@
+project:
+  name: gold-policy-colombia-biplot-umap
+  country: Colombia
+  asset: gold
+
+analysis:
+  methods:
+    - local_biplot
+    - umap
+    - difference_in_differences
+    - decision_trees
+    - grey_box_models
+  frequency: monthly
+  target: gold_price

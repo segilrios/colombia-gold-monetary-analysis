@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+.env
+
+# Data artifacts
+data/raw/*
+data/interim/*
+data/processed/*
+data/external/*
+!data/**/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Outputs
+reports/figures/*
+reports/tables/*
+!reports/**/.gitkeep
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
