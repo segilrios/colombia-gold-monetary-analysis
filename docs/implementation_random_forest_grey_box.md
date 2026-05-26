@@ -23,11 +23,25 @@ python scripts/run_policy_umap_biplot.py --config configs/project.yaml
 python scripts/run_random_forest_grey_box.py --config configs/project.yaml
 ```
 
+Corrida exhaustiva local:
+
+```bash
+python scripts/run_exhaustive_random_forest_grey_box.py --config configs/project.yaml --preset exhaustive
+```
+
+Para probar rapido antes de lanzar todo:
+
+```bash
+python scripts/run_exhaustive_random_forest_grey_box.py --config configs/project.yaml --preset quick
+```
+
 El primer comando genera el contexto UMAP. El segundo entrena los modelos supervisados y, si existe `data/processed/policy_umap_embedding.csv`, usa el cluster UMAP como variable de regimen.
 
 ## Salidas
 
 - `reports/tables/random_forest_grey_box_metrics.csv`
+- `reports/tables/exhaustive_model_search_results.csv`
+- `reports/tables/exhaustive_model_search_best_by_horizon.csv`
 - `reports/tables/random_forest_grey_box_predictions_h1.csv`
 - `reports/tables/random_forest_grey_box_predictions_h3.csv`
 - `reports/tables/random_forest_grey_box_predictions_h6.csv`

@@ -210,9 +210,8 @@ def add_umap_context(
     return base.merge(monthly, on=date_column, how="left")
 
 
-def build_supervised_dataset(config_path: str | Path = "configs/project.yaml") -> SupervisedDataset:
-    """Build the time-series supervised learning matrix."""
-    config = load_config(config_path)
+def build_supervised_dataset_from_config(config: dict[str, Any]) -> SupervisedDataset:
+    """Build the time-series supervised learning matrix from a loaded config."""
     data_config = config["data"]
     supervised_config = config.get("supervised", {})
 
@@ -302,6 +301,11 @@ def build_supervised_dataset(config_path: str | Path = "configs/project.yaml") -
         theory_feature_columns=theory_feature_columns,
         horizon_columns=horizon_columns,
     )
+
+
+def build_supervised_dataset(config_path: str | Path = "configs/project.yaml") -> SupervisedDataset:
+    """Build the time-series supervised learning matrix."""
+    return build_supervised_dataset_from_config(load_config(config_path))
 
 
 def split_train_test(

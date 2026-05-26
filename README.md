@@ -66,6 +66,7 @@ Existe una relacion estadistica, predictiva o causal entre el precio del oro y l
 pip install -r requirements.txt
 python scripts/run_policy_umap_biplot.py --config configs/project.yaml
 python scripts/run_random_forest_grey_box.py --config configs/project.yaml
+python scripts/run_exhaustive_random_forest_grey_box.py --config configs/project.yaml --preset quick
 ```
 
 Este flujo carga la base cruda local, genera embedding UMAP, clusters, local biplot por cluster y una tabla inicial para contrastes tipo DiD/event-study alrededor de cambios fuertes en la tasa de politica monetaria.
