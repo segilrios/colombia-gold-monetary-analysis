@@ -3,6 +3,22 @@ project:
   country: Colombia
   asset: gold
 
+data:
+  raw_path: data/raw/BD_Energía_Colombia.xlsx
+  sheet_name: Hoja1
+  date_column: fecha
+  target_column: precio_oro
+  feature_columns:
+    - demanda_energetica
+    - trm
+    - tipm
+    - precio_brent
+    - precio_cafe_centusd
+    - dtf
+    - bancolombia_price_usd
+    - inflacion_sin_alimentos
+    - precio_bolsa_nacional_energetica
+
 analysis:
   methods:
     - local_biplot
@@ -11,4 +27,38 @@ analysis:
     - decision_trees
     - grey_box_models
   frequency: monthly
-  target: gold_price
+  target: precio_oro
+  n_clusters: 4
+  random_state: 42
+  umap:
+    n_neighbors: 12
+    min_dist: 0.15
+    metric: euclidean
+  did:
+    event_window: 6
+    policy_change_quantile: 0.75
+
+policy:
+  rate_column: tipm
+  executive_periods:
+    - name: pastrana
+      start: "1998-08-07"
+      end: "2002-08-06"
+    - name: uribe_i
+      start: "2002-08-07"
+      end: "2006-08-06"
+    - name: uribe_ii
+      start: "2006-08-07"
+      end: "2010-08-06"
+    - name: santos_i
+      start: "2010-08-07"
+      end: "2014-08-06"
+    - name: santos_ii
+      start: "2014-08-07"
+      end: "2018-08-06"
+    - name: duque
+      start: "2018-08-07"
+      end: "2022-08-06"
+    - name: petro
+      start: "2022-08-07"
+      end: "2026-08-06"

@@ -24,6 +24,8 @@ data/external/*
 reports/figures/*
 reports/tables/*
 !reports/**/.gitkeep
+!reports/figures/*.png
+!reports/tables/*.csv
 
 # OS/editor
 .DS_Store

@@ -56,7 +56,17 @@ Existe una relacion estadistica, predictiva o causal entre el precio del oro y l
 - `docs/state_of_art.md`: estado del arte minimo.
 - `docs/data_catalog.md`: inventario de la base cruda local.
 - `docs/methodology_roadmap.md`: ruta metodologica inicial.
+- `docs/implementation_feature_sergio.md`: primera implementacion UMAP/local biplot/clustering/DiD.
 - `docs/literature/`: PDFs primarios y referencias abiertas descargadas.
+
+## Primer flujo analitico
+
+```bash
+pip install -r requirements.txt
+python scripts/run_policy_umap_biplot.py --config configs/project.yaml
+```
+
+Este flujo carga la base cruda local, genera embedding UMAP, clusters, local biplot por cluster y una tabla inicial para contrastes tipo DiD/event-study alrededor de cambios fuertes en la tasa de politica monetaria.
 
 ## Estado
 
