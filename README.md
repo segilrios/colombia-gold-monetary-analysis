@@ -65,14 +65,22 @@ Existe una relacion estadistica, predictiva o causal entre el precio del oro y l
 ```bash
 pip install -r requirements.txt
 python scripts/run_policy_umap_biplot.py --config configs/project.yaml
+python scripts/run_random_forest_grey_box.py --config configs/project.yaml
 ```
 
 Este flujo carga la base cruda local, genera embedding UMAP, clusters, local biplot por cluster y una tabla inicial para contrastes tipo DiD/event-study alrededor de cambios fuertes en la tasa de politica monetaria.
+El segundo comando entrena Decision Tree, Random Forest y un modelo de caja gris con bloque macro lineal mas Random Forest sobre residuos.
 
 Figuras principales:
 
 - `reports/figures/policy_umap_local_biplot_clusters.png`
 - `reports/figures/policy_umap_by_executive_period.png`
+- `reports/figures/random_forest_grey_box_predictions_h1.png`
+
+Notebooks Kaggle:
+
+- `notebooks/01_umap_local_biplot_kaggle.ipynb`
+- `notebooks/02_random_forest_grey_box_kaggle.ipynb`
 
 ## Estado
 

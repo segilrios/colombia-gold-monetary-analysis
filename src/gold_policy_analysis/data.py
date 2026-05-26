@@ -8,6 +8,22 @@ import numpy as np
 import pandas as pd
 
 
+def resolve_raw_path(path: str | Path, search_root: str | Path = ".") -> Path:
+    """Resolve a raw Excel path locally or from Kaggle input folders."""
+    candidate = Path(path)
+    if candidate.exists():
+        return candidate
+
+    roots = [Path(search_root), Path("/kaggle/input"), Path("/kaggle/working")]
+    for root in roots:
+        if root.exists():
+            matches = sorted(root.rglob("*.xlsx"))
+            if matches:
+                return matches[0]
+
+    raise FileNotFoundError(f"Could not find raw Excel file from {path!s}.")
+
+
 def slugify(value: object) -> str:
     """Convert spreadsheet headers into stable ASCII identifiers."""
     text = "" if value is None else str(value)
@@ -20,7 +36,7 @@ def slugify(value: object) -> str:
 
 def load_raw_excel(path: str | Path, sheet_name: str | int | None = 0) -> pd.DataFrame:
     """Read the raw Excel file and normalize column names."""
-    df = pd.read_excel(path, sheet_name=sheet_name)
+    df = pd.read_excel(resolve_raw_path(path), sheet_name=sheet_name)
     df = df.rename(columns={column: slugify(column) for column in df.columns})
     df = df.loc[:, [column for column in df.columns if column]]
     return df

@@ -38,6 +38,33 @@ analysis:
     event_window: 6
     policy_change_quantile: 0.75
 
+supervised:
+  frequency: monthly
+  horizons: [1, 3, 6]
+  lags: [1, 2, 3, 6, 12]
+  rolling_windows: [3, 6, 12]
+  train_size: 0.8
+  include_umap_context: true
+  umap_context_path: data/processed/policy_umap_embedding.csv
+  random_forest:
+    n_estimators: 500
+    max_depth:
+    min_samples_leaf: 3
+    random_state: 42
+  decision_tree:
+    max_depth: 4
+    min_samples_leaf: 5
+    random_state: 42
+  grey_box:
+    alpha_grid: [0.01, 0.1, 1.0, 10.0, 100.0]
+    theory_features:
+      - trm
+      - tipm
+      - dtf
+      - precio_brent
+      - inflacion_sin_alimentos
+      - precio_bolsa_nacional_energetica
+
 policy:
   rate_column: tipm
   executive_periods:

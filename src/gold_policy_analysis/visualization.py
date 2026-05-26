@@ -3,6 +3,9 @@ from __future__ import annotations
 from pathlib import Path
 from math import ceil
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import BoundaryNorm, ListedColormap
 from matplotlib.lines import Line2D
