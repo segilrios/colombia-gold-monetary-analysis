@@ -54,6 +54,7 @@ Existe una relacion estadistica, predictiva o causal entre el precio del oro y l
 ## Documentacion inicial
 
 - `docs/state_of_art.md`: estado del arte minimo.
+- `docs/state_of_art_random_forest_grey_box.md`: estado del arte para Random Forest y caja gris.
 - `docs/data_catalog.md`: inventario de la base cruda local.
 - `docs/methodology_roadmap.md`: ruta metodologica inicial.
 - `docs/implementation_feature_sergio.md`: primera implementacion UMAP/local biplot/clustering/DiD.

@@ -20,6 +20,10 @@ Referencias abiertas descargadas para construir el estado del arte:
 - `did-multiple-time-periods-1803.09015.pdf`
 - `banrep-borra685-monetary-policy-commodity-prices.pdf`
 - `gold-tree-based-models-ijisae-2023.pdf`
+- `random-forests-breiman-2001.pdf`
+- `macroeconomy-as-random-forest-2006.12724.pdf`
+- `hybrid-stochastic-grey-metal-price-2020.pdf`
+- `cash-flow-prediction-grey-box-2015.pdf`
 
 ## Criterio de uso
 
