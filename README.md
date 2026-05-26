@@ -68,6 +68,11 @@ python scripts/run_policy_umap_biplot.py --config configs/project.yaml
 
 Este flujo carga la base cruda local, genera embedding UMAP, clusters, local biplot por cluster y una tabla inicial para contrastes tipo DiD/event-study alrededor de cambios fuertes en la tasa de politica monetaria.
 
+Figuras principales:
+
+- `reports/figures/policy_umap_local_biplot_clusters.png`
+- `reports/figures/policy_umap_by_executive_period.png`
+
 ## Estado
 
 Estructura inicial del proyecto, documentacion minima y literatura base.

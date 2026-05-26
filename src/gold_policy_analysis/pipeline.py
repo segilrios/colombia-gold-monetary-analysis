@@ -11,6 +11,7 @@ from gold_policy_analysis.embedding import cluster_embedding, compute_embedding
 from gold_policy_analysis.local_biplot import compute_local_biplot
 from gold_policy_analysis.periods import assign_executive_periods, classify_policy_stance
 from gold_policy_analysis.visualization import plot_embedding_with_loadings
+from gold_policy_analysis.visualization import plot_embedding_by_executive_period
 
 
 def _cluster_profiles(df: pd.DataFrame, feature_columns: list[str], target_column: str) -> pd.DataFrame:
@@ -99,6 +100,7 @@ def run_policy_map(config_path: str | Path = "configs/project.yaml") -> dict[str
     did_design_path = processed_dir / "policy_event_did_design.csv"
     did_contrasts_path = tables_dir / "policy_event_contrasts.csv"
     figure_path = figures_dir / "policy_umap_local_biplot_clusters.png"
+    period_figure_path = figures_dir / "policy_umap_by_executive_period.png"
 
     model_df.to_csv(embedding_path, index=False)
     loadings.to_csv(loadings_path, index=False)
@@ -106,6 +108,7 @@ def run_policy_map(config_path: str | Path = "configs/project.yaml") -> dict[str
     did_design.to_csv(did_design_path, index=False)
     did_contrasts.to_csv(did_contrasts_path, index=False)
     plot_embedding_with_loadings(model_df, loadings, figure_path)
+    plot_embedding_by_executive_period(model_df, period_figure_path)
 
     return {
         "embedding_method": embedding_result.method,
@@ -115,4 +118,5 @@ def run_policy_map(config_path: str | Path = "configs/project.yaml") -> dict[str
         "did_design": did_design_path,
         "did_contrasts": did_contrasts_path,
         "figure": figure_path,
+        "period_figure": period_figure_path,
     }

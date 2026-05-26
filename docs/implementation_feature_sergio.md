@@ -35,6 +35,7 @@ El flujo realiza:
 - `reports/tables/local_biplot_loadings.csv`
 - `reports/tables/policy_event_contrasts.csv`
 - `reports/figures/policy_umap_local_biplot_clusters.png`
+- `reports/figures/policy_umap_by_executive_period.png`
 
 ## Primera corrida local
 
